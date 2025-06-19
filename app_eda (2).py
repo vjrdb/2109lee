@@ -46,22 +46,33 @@ class Home:
         if st.session_state.get("logged_in"):
             st.success(f"{st.session_state.get('user_email')}님 환영합니다.")
 
-        # Kaggle 데이터셋 출처 및 소개
+        # Bike Sharing 안내
         st.markdown("""
-                ---
-                **Bike Sharing Demand 데이터셋**  
-                - 제공처: [Kaggle Bike Sharing Demand Competition](https://www.kaggle.com/c/bike-sharing-demand)  
-                - 설명: 2011–2012년 캘리포니아 주의 수도인 미국 워싱턴 D.C. 인근 도시에서 시간별 자전거 대여량을 기록한 데이터  
-                - 주요 변수:  
-                  - `datetime`: 날짜 및 시간  
-                  - `season`: 계절  
-                  - `holiday`: 공휴일 여부  
-                  - `workingday`: 근무일 여부  
-                  - `weather`: 날씨 상태  
-                  - `temp`, `atemp`: 기온 및 체감온도  
-                  - `humidity`, `windspeed`: 습도 및 풍속  
-                  - `casual`, `registered`, `count`: 비등록·등록·전체 대여 횟수  
-                """)
+        ---
+        **Bike Sharing Demand 데이터셋**  
+        - 제공처: [Kaggle Bike Sharing Demand Competition](https://www.kaggle.com/c/bike-sharing-demand)  
+        - 설명: 2011–2012년 미국 워싱턴 D.C. 인근 도시에서 시간별 자전거 대여량을 기록한 데이터  
+        - 주요 변수:
+          - `datetime`: 날짜 및 시간  
+          - `season`: 계절  
+          - `holiday`: 공휴일 여부  
+          - `workingday`: 근무일 여부  
+          - `weather`: 날씨 상태  
+          - `temp`, `atemp`: 기온 및 체감온도  
+          - `humidity`, `windspeed`: 습도 및 풍속  
+          - `casual`, `registered`, `count`: 비등록·등록·전체 대여 횟수
+        """)
+
+        # Population Trends 안내
+        st.markdown("""
+        ---
+        **Population Trends 데이터셋 분석**  
+        - 사용 파일: `population_trends.csv`  
+        - 설명: 연도별·지역별 인구, 출생아 수, 사망자 수 등을 포함한 대한민국 인구 동향 데이터  
+        - 분석 기능:
+          - 기본 전처리 및 요약 통계 확인
+          - 연도별 전국 인구 추이 시각화 및 예측
+          - 최근 5년간 지역별 인구 변화량 및 증감률 분석
 
 # ---------------------
 # 로그인 페이지 클래스
