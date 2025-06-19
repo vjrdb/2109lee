@@ -69,7 +69,7 @@ class Home:
 # ---------------------
 # EDA 페이지 클래스
 # ---------------------
-class EDA:
+class EDA: 
     def __init__(self):
         st.title("📊 Bike Sharing Demand EDA")
         uploaded = st.file_uploader("데이터셋 업로드 (train.csv)", type="csv")
