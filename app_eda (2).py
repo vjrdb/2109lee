@@ -16,7 +16,7 @@
 
             tab_option = st.radio("🔍 Population 분석 항목", [
                 "기초 통계", "연도별 추이", "지역별 분석", "변화량 분석", "시각화"
-            ], horizontal=True)
+            ], label_visibility="collapsed", horizontal=True)
 
             # 1. 기초 통계
             if tab_option == "기초 통계":
