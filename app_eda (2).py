@@ -85,7 +85,6 @@ def PopulationTrendsEDA():
             delta = pivot.iloc[-1] - pivot.iloc[-6]
             rate = (delta / pivot.iloc[-6]) * 100
 
-            # 지역명 영어로 (간단 매핑 예시)
             region_map = {
                 '서울': 'Seoul', '부산': 'Busan', '대구': 'Daegu', '인천': 'Incheon',
                 '광주': 'Gwangju', '대전': 'Daejeon', '울산': 'Ulsan', '세종': 'Sejong',
@@ -153,11 +152,30 @@ def PopulationTrendsEDA():
         st.info("population_trends.csv 파일을 먼저 업로드해주세요.")
 
 # ---------------------
-# 메인 라우터
+# 메인 라우터 메뉴 수정
 # ---------------------
-menu = st.sidebar.radio("페이지 선택", ["Home", "EDA"])
+with st.sidebar:
+    st.markdown("## 📑 메뉴")
+    menu = st.selectbox(
+        "페이지 선택",
+        ["Home", "Login", "Register", "Find PW", "EDA"],
+        index=0,
+        format_func=lambda x: {
+            "Home": "🏠 Home",
+            "Login": "🔐 Login",
+            "Register": "📄 Register",
+            "Find PW": "🔍 Find PW",
+            "EDA": "📊 EDA"
+        }[x]
+    )
 
 if menu == "Home":
     Home()
 elif menu == "EDA":
     PopulationTrendsEDA()
+elif menu == "Login":
+    st.title("🔐 Login (미구현)")
+elif menu == "Register":
+    st.title("📄 Register (미구현)")
+elif menu == "Find PW":
+    st.title("🔍 Find PW (미구현)")
