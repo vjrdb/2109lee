@@ -41,7 +41,7 @@ if "logged_in" not in st.session_state:
 # 홈 페이지 클래스
 # ---------------------
 class Home:
-       def __init__(self, login_page, register_page, findpw_page):
+     def __init__(self, login_page, register_page, findpw_page):
         st.title("🏠 Home")
         if st.session_state.get("logged_in"):
             st.success(f"{st.session_state.get('user_email')}님 환영합니다.")
@@ -49,16 +49,20 @@ class Home:
         # Population Trends 안내
         st.markdown("""
         ---
-        **Population Trends 데이터셋 분석**  
-        - 사용 파일: `population_trends.csv`  
-        - 설명: 연도별·지역별 인구, 출생아 수, 사망자 수 등을 포함한 대한민국 인구 동향 데이터  
-        
-        **📌 분석 기능 및 절차**
-        - 🔍 **결측치 및 중복 확인**
-        - 📈 **연도별 전체 인구 추이 그래프**
-        - 🗺️ **지역별 인구 변화량 순위**
-        - 🔼 **증감률 상위 지역 및 연도 도출**
-        - 🧩 **누적영역그래프 등 적절한 시각화**
+        ## 📈 Population Trends 데이터셋 분석
+
+        **🗂️ 사용 데이터**  
+        - 파일명: `population_trends.csv`  
+        - 내용: 연도별 · 지역별 인구, 출생아 수, 사망자 수 등을 포함한 대한민국 인구 통계 데이터  
+
+        **🔍 주요 분석 기능**  
+        - 🔎 **결측치 및 중복 데이터 확인**  
+        - 📆 **연도별 전체 인구 추이 시각화**  
+        - 📍 **지역별 인구 변화량 및 변화율 계산**  
+        - 🔼 **증가/감소율 상위 지역 도출**  
+        - 📊 **누적 영역 그래프를 통한 시각적 비교**
+
+        **📌 참고**: [EDA 탭]에서 해당 기능을 직접 확인하고 실행할 수 있습니다.
         """)
        
 
