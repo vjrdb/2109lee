@@ -152,6 +152,29 @@ def PopulationTrendsEDA():
         st.info("population_trends.csv 파일을 먼저 업로드해주세요.")
 
 # ---------------------
+# 로그인/회원가입/비밀번호찾기 화면
+# ---------------------
+def Login():
+    st.title("🔐 로그인")
+    st.text_input("이메일")
+    st.text_input("비밀번호", type="password")
+    st.button("로그인")
+
+def Register():
+    st.title("📄 회원가입")
+    st.text_input("이메일")
+    st.text_input("비밀번호", type="password")
+    st.text_input("성명")
+    st.selectbox("성별", ["선택 안함", "남성", "여성"])
+    st.text_input("휴대전화번호")
+    st.button("회원가입")
+
+def FindPW():
+    st.title("🔍 비밀번호 찾기")
+    st.text_input("이메일")
+    st.button("비밀번호 재설정 메일 전송")
+
+# ---------------------
 # 메인 라우터 메뉴 수정
 # ---------------------
 with st.sidebar:
@@ -174,8 +197,8 @@ if menu == "Home":
 elif menu == "EDA":
     PopulationTrendsEDA()
 elif menu == "Login":
-    st.title("🔐 Login (미구현)")
+    Login()
 elif menu == "Register":
-    st.title("📄 Register (미구현)")
+    Register()
 elif menu == "Find PW":
-    st.title("🔍 Find PW (미구현)")
+    FindPW()
