@@ -175,22 +175,19 @@ def FindPW():
     st.button("비밀번호 재설정 메일 전송")
 
 # ---------------------
-# 메인 라우터 메뉴 수정
+# 메인 라우터 메뉴 (고정 사이드바 형태로 변경)
 # ---------------------
-with st.sidebar:
-    st.markdown("## 📑 메뉴")
-    menu = st.selectbox(
-        "페이지 선택",
-        ["Home", "Login", "Register", "Find PW", "EDA"],
-        index=0,
-        format_func=lambda x: {
-            "Home": "🏠 Home",
-            "Login": "🔐 Login",
-            "Register": "📄 Register",
-            "Find PW": "🔍 Find PW",
-            "EDA": "📊 EDA"
-        }[x]
-    )
+menu = st.sidebar.radio(
+    "페이지 선택",
+    ["Home", "Login", "Register", "Find PW", "EDA"],
+    format_func=lambda x: {
+        "Home": "🏠 Home",
+        "Login": "🔐 Login",
+        "Register": "📄 Register",
+        "Find PW": "🔍 Find PW",
+        "EDA": "📊 EDA"
+    }[x]
+)
 
 if menu == "Home":
     Home()
