@@ -85,31 +85,6 @@ class EDA:
                 "6. 상관관계", "7. 이상치 제거", "8. 로그 변환"
             ])
 
-            with tabs[0]:
-                st.markdown("""**목적**: 자전거 대여량 패턴 분석...""")
-            with tabs[1]:
-                st.write(df.head())
-            with tabs[2]:
-                st.write(df.isnull().sum())
-            with tabs[3]:
-                df['year'] = df['datetime'].dt.year
-                st.write(df[['datetime', 'year']].head())
-            with tabs[4]:
-                fig, ax = plt.subplots()
-                sns.histplot(df['count'], ax=ax)
-                st.pyplot(fig)
-            with tabs[5]:
-                corr = df.corr()
-                st.dataframe(corr)
-            with tabs[6]:
-                threshold = df['count'].mean() + 3 * df['count'].std()
-                st.write(f"이상치 기준: {threshold:.2f}")
-            with tabs[7]:
-                df['log_count'] = np.log1p(df['count'])
-                fig, ax = plt.subplots()
-                sns.histplot(df['log_count'], ax=ax)
-                st.pyplot(fig)
-
         # ---------------------
         # 📈 Population Trends 분석
         # ---------------------
